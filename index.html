@@ -328,25 +328,9 @@
                   <input type="file" class="form-control" id="photoUpload" name="photos[]" multiple accept="image/*" required>
                   <div id="photoHelp" class="form-text">You can upload multiple photos at once.</div>
                 </div>
-                <button type="submit" class="btn-submit">Upload</button>
               </form>
 
         </div>
-        <script>
-            document.getElementById('photoUploadForm').addEventListener('submit', function(event) {
-              var fileInput = document.getElementById('photoUpload');
-              var files = fileInput.files;
-              var validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
-        
-              for (var i = 0; i < files.length; i++) {
-                if (!validImageTypes.includes(files[i].type)) {
-                  alert('Please select only image files (JPEG, PNG, GIF).');
-                  event.preventDefault();
-                  return;
-                }
-              }
-            });
-          </script>
 
 
 <!-- Question: 22 -->
@@ -357,7 +341,6 @@
               <input type="file" class="form-control" id="fileUpload" name="file" accept=".pdf, .doc, .docx, .txt" required>
               <div id="fileHelp" class="form-text">Supported file formats: PDF, Word, Text</div>
             </div>
-            <button type="submit" class="btn-submit btn-primary">Upload</button>
           </form>
 
     </div>
