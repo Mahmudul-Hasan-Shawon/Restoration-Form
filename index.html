@@ -11,6 +11,7 @@
      <script src="./Asset/bootstrap.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
 </head>
 <body>
 
@@ -152,7 +153,7 @@
         </div>
 
 <!-- Question: 13 -->
-        <div class="row pt-5">
+        <!-- <div class="row pt-5">
             <label class="form-label">Is the insurance company paying to match?</label>
             <form>
                 <div class="col">
@@ -171,13 +172,34 @@
                            <input type="checkbox" value="1"><span>UNKNOWN</span>
                         </label>
                     </div>
-                    <div class="p-1">
-                        <button type="submit" class="btn-submit">Submit</button>
-                    </div>
                 </div>
             </form>      
-        </div>
+        </div> -->
   <!-- End of Is the insurance company paying to match? question -->
+
+
+
+  <!--  -->
+<div class="row pt-3">
+    <div class="button-container">
+        <button class="button" onclick="selectButton('YES')">YES</button>
+        <button class="button" onclick="selectButton('NO')">NO</button>
+        <button class="button" onclick="selectButton('UNKNOWN')">UNKNOWN</button>
+    </div>
+
+    <!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Question: 14 -->
         <div class="row pt-5">
@@ -292,38 +314,39 @@
 <!-- Question: 20 -->
 <div class="row pt-5">
     <label class="form-label">Do you have an (AOR) assignment of rights signed by all property owners?<span class="text-danger">*</span> </label>
-    <form>
-        <div class="col">
-            <div class="cat yes">
-                <label>
-                   <input type="checkbox" value="1"><span>YES</span>
-                </label>
-            </div>
-            <div class="cat no">
-                <label>
-                   <input type="checkbox" value="1"><span>NO</span>
-                </label>
-            </div>
-
-            <div class="p-1">
-                <button type="submit" class="btn-submit">Submit</button>
-            </div>
-        </div>
-    </form>      
+    <div class="button-container">
+        <button class="button" onclick="selectButton('YES')">YES</button>
+        <button class="button" onclick="selectButton('NO')">NO</button>
+    </div>    
 </div>
 <!-- Question: 21 -->
 
         <div class="row pt-5">
-            <form enctype="multipart/form-data">
+            <form enctype="multipart/form-data" id="photoUploadForm">
                 <div class="mb-3">
-                    <label for="photoUpload" class="form-label">Select Photo(s) to Upload:</label>
-                    <input type="file" class="form-control" id="photoUpload" name="photos[]" multiple accept="image/*" required>
-                    <div id="photoHelp" class="form-text">You can upload multiple photos at once.</div>
+                  <label for="photoUpload" class="form-label">Select Photo(s) to Upload:</label>
+                  <input type="file" class="form-control" id="photoUpload" name="photos[]" multiple accept="image/*" required>
+                  <div id="photoHelp" class="form-text">You can upload multiple photos at once.</div>
                 </div>
                 <button type="submit" class="btn-submit">Upload</button>
-            </form>
+              </form>
 
         </div>
+        <script>
+            document.getElementById('photoUploadForm').addEventListener('submit', function(event) {
+              var fileInput = document.getElementById('photoUpload');
+              var files = fileInput.files;
+              var validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+        
+              for (var i = 0; i < files.length; i++) {
+                if (!validImageTypes.includes(files[i].type)) {
+                  alert('Please select only image files (JPEG, PNG, GIF).');
+                  event.preventDefault();
+                  return;
+                }
+              }
+            });
+          </script>
 
 
 <!-- Question: 22 -->
@@ -339,6 +362,19 @@
 
     </div>
 
+    
+  
+
+
+      <div class="row p-4">
+        <form action="/submit" method="post">
+            <div class="row pt-4">
+              <!-- Your form controls go here -->
+              <button type="submit" class="button-submit">Submit</button>
+            </div>
+          </form>
+
+    </div>
 
 
 

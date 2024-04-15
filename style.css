@@ -25,7 +25,7 @@ scroll-behavior: smooth;
 .btn-submit{
     background-color: #007de4;
     color: white;
-    width: 100px;
+    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 2px;
@@ -36,7 +36,7 @@ scroll-behavior: smooth;
     -o-border-radius: 2px;
 }
 .btn-submit:hover{
-    width: 100px;
+    width: 100%;
     padding: 12px;
     border: none;
     background-color: #00c05d;
@@ -93,4 +93,57 @@ scroll-behavior: smooth;
 /* This will declare how a selected input will look giving generic properties */
 .cat input:checked + span {
   color: #ffffff;
+}
+
+
+
+
+
+.button-container {
+  display: flex;
+}
+.button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 120px;
+  border-radius: 3px;
+  transition: ease-in-out 0.3s;
+  
+}
+.button:hover {
+  background-color: #05d183;
+  color: white;
+  transition: ease-in-out 0.3s;
+}
+.button.selected {
+  background-color: #02e28c;
+}
+
+.button-submit{
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.button-submit:hover{
+  background-color: #00c57a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
