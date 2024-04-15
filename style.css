@@ -83,7 +83,7 @@ scroll-behavior: smooth;
   padding: 10px 20px;
   margin-right: 10px;
   cursor: pointer;
-  width: 120px;
+  width: 100%;
   border-radius: 3px;
   transition: ease-in-out 0.3s;
   
@@ -110,7 +110,7 @@ scroll-behavior: smooth;
   -o-border-radius: 5px;
 }
 .button-submit:hover{
-  background-color: #00c57a;
+  background-color: #00dd88;
   color: white;
   border: none;
   border-radius: 5px;
@@ -153,3 +153,22 @@ scroll-behavior: smooth;
   -ms-transition: ease-in-out 0.2s;
   -o-transition: ease-in-out 0.2s;
 }
+
+
+    .custom-button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 3px;
+      transition: ease-in-out 0.3s;
+    }
+    .custom-button.selected {
+      background-color: #00dd88;
+      color: white;
+   
+    }
+
