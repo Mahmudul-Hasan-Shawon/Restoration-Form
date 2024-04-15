@@ -121,3 +121,24 @@ scroll-behavior: smooth;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
+
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: ease-in-out 0.4s;
+  -webkit-transition: ease-in-out 0.4s;
+  -moz-transition: ease-in-out 0.4s;
+  -ms-transition: ease-in-out 0.4s;
+  -o-transition: ease-in-out 0.4s;
+  border: none;
+}
+.card:hover{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: ease-in-out 0.4s;
+  -webkit-transition: ease-in-out 0.4s;
+  -moz-transition: ease-in-out 0.4s;
+  -ms-transition: ease-in-out 0.4s;
+  -o-transition: ease-in-out 0.4s;
+}
+

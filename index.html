@@ -15,89 +15,103 @@
 </head>
 <body>
 
+
+
+
     <div class="container">
         <h1 class="text-center pt-5" style="color: rgb(151, 40, 255);">RESTORATION COMPANY</h1>
     </div>
 
-
+ 
+    
 <!-- Question: 1 -->
-    <div class="container pt-5 pb-5" style="width: 600px;">
-        <div class="row">
+<div class="container pt-5 pb-5" style="width: 600px;">
+    <div class="row card pt-5 pb-5 p-4">
+        <div class="">
             <div class="col">
                 <label for="name" class="form-label">Your Name<span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="name" required>
-            </div>  
+            </div>
         </div>
-<!-- Question: 2 -->
-        <div class="row pt-3">
+        <!-- Question: 2 -->
+        <div class="pt-3">
             <div class="col">
-                <label for="company_name" class="form-label">Name of Your Company<span class="text-danger">*</span></label>
+                <label for="company_name" class="form-label">Name of Your Company<span
+                        class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="company_name" required>
             </div>
         </div>
-<!-- Question: 3 -->
-        <div class="row pt-3">
+        <!-- Question: 3 -->
+        <div class="pt-3">
             <div class="col">
-              <label for="claim_number" class="form-label">Claim Number<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="claim_number" required>
+                <label for="claim_number" class="form-label">Claim Number<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="claim_number" required>
             </div>
         </div>
-<!-- Question: 4 -->
-        <div class="row pt-3">
+        <!-- Question: 4 -->
+        <div class="pt-3">
             <div class="col">
                 <label for="policy_number" class="form-label">Policy Number<span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="policy_number" required>
-              </div>
+            </div>
         </div>
-<!-- Question: 5 -->
-        <div class="row pt-3">
+        <!-- Question: 5 -->
+        <div class="pt-3">
             <div class="col">
                 <label for="date_of_loss" class="form-label">Date of Loss<span class="text-danger">*</span></label>
                 <input type="date" class="form-control" id="date_of_loss" required>
-              </div>
-        </div>
-<!-- Question: 6 -->
-        <div class="row pt-5">
-            <div class="col">
-                <label for="property_owner_first_name" class="form-label">Property Owner’s First Name<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="property_owner_first_name" required>
-            </div>
-        </div>
-<!-- Question: 7 -->
-        <div class="row pt-3">
-            <div class="col">
-                <label for="property_owner_last_name" class="form-label">Property Owner’s Last Name<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="property_owner_last_name" required>
-            </div>
-        </div>
-        
-<!-- Question: 8 -->
-        <div class="row pt-3">
-            <div class="col">
-                <label for="property_owner_email" class="form-label">Property Owner’s Email<span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="property_owner_email" required>
             </div>
         </div>
 
-<!-- Question: 9 -->
-        <div class="row pt-3">
-            <div class="col">
-                <label for="property_owner_phone_number" class="form-label">Property Owner’s Phone NUmber<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="property_owner_phone_number" required>
-            </div>
-        </div>
+    </div>
 
-<!-- Question: 10 -->
-<div class="container mt-3 p-0">
+    <div class="row card mt-5 pb-5 p-4">
+    <!-- Question: 6 -->
+    <div class="pt-4">
+        <div class="col">
+            <label for="property_owner_first_name" class="form-label">Property Owner’s First Name<span
+                    class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="property_owner_first_name" required>
+        </div>
+    </div>
+    <!-- Question: 7 -->
+    <div class="pt-3">
+        <div class="col">
+            <label for="property_owner_last_name" class="form-label">Property Owner’s Last Name<span
+                    class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="property_owner_last_name" required>
+        </div>
+    </div>
+
+    <!-- Question: 8 -->
+    <div class="pt-3">
+        <div class="col">
+            <label for="property_owner_email" class="form-label">Property Owner’s Email<span
+                    class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="property_owner_email" required>
+        </div>
+    </div>
+
+    <!-- Question: 9 -->
+    <div class="pt-3">
+        <div class="col">
+            <label for="property_owner_phone_number" class="form-label">Property Owner’s Phone NUmber<span
+                    class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="property_owner_phone_number" required>
+        </div>
+    </div>
+
+    <!-- Question: 10 -->
+<div class="container mt-3 pt-2">
     <form>
-      <div class="row mb-3">
+      <div class="row mb-2">
         <div class="col">
           <label class="form-label">Is there a second property owner?<span class="text-danger">*</span></label>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="second_owner" id="second_owner_yes" value="Yes" onclick="toggleSecondOwnerFields(this)">
             <label class="form-check-label" for="second_owner_yes">Yes</label>
           </div>
-          <div class="form-chec">
+          <div class="form-check">
             <input class="form-check-input" type="radio" name="second_owner" id="second_owner_no" value="No" onclick="toggleSecondOwnerFields(this)">
             <label class="form-check-label" for="second_owner_no">No</label>
           </div>
@@ -136,58 +150,15 @@
     }
   </script>
 
-<!-- Question: 11 -->
-        <div class="row pt-3">
-            <div class="col">
-                <label for="loss_location" class="form-label">Loss Location<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="loss_location" required>
-              </div>
-        </div>
-
-<!-- Question: 12 -->
-        <div class="row pt-3">
-            <div class="col">
-                <label for="business_name" class="form-label">Business Name</label>
-                <input type="text" class="form-control" id="business_name">
-              </div>
-        </div>
-
-<!-- Question: 13 -->
-        <!-- <div class="row pt-5">
-            <label class="form-label">Is the insurance company paying to match?</label>
-            <form>
-                <div class="col">
-                    <div class="cat yes">
-                        <label>
-                           <input type="checkbox" value="1"><span>YES</span>
-                        </label>
-                    </div>
-                    <div class="cat no">
-                        <label>
-                           <input type="checkbox" value="1"><span>NO</span>
-                        </label>
-                    </div>
-                    <div class="cat unknown">
-                        <label>
-                           <input type="checkbox" value="1"><span>UNKNOWN</span>
-                        </label>
-                    </div>
-                </div>
-            </form>      
-        </div> -->
-  <!-- End of Is the insurance company paying to match? question -->
+</div>
+        
 
 
 
-  <!--  -->
-<div class="row pt-3">
-    <div class="button-container">
-        <button class="button" onclick="selectButton('YES')">YES</button>
-        <button class="button" onclick="selectButton('NO')">NO</button>
-        <button class="button" onclick="selectButton('UNKNOWN')">UNKNOWN</button>
-    </div>
+<div class="row card">
+    
 
-    <!--  -->
+</div>
 
 
 
@@ -202,17 +173,17 @@
 
 
 <!-- Question: 14 -->
-        <div class="row pt-5">
-            <!-- <div class="col">
+        <!-- <div class="row pt-5">
+            <div class="col">
                 <div class="col">
                     <label class="form-label">Is one of the issues applicable?</label>
                     
                 </div>
-            </div> -->
-        </div>
+            </div>
+        </div> -->
 <!-- Question: 15 -->
 
-        <div class="row pt-0">
+        <div class="card row pt-0 pb-4 p-4 mt-5 pt-4 ">
             <div class="col pt-0">
                 <label class="form-label">Is one of the issues applicable?</label>
                 <label class="form-label">Select Issue</label>
@@ -227,101 +198,18 @@
                 </select>
             </div>
         </div>
+
+
+
+
+
+
+
+
 <!-- Question: 16 -->
-
-    <div class="row pt-5">
-      <div class="col pt-0">
-        <label class="form-label">Carrier is not paying for the following</label>
-        <select id="selectIssue" class="form-select" aria-label="Select Issue" required>
-          <option selected disabled>Select an option...</option>
-          <option value="Denied sudden accidental damage">Denied sudden accidental damage</option>
-          <option value="PWI line items on a fire damage claim">PWI line items on a fire damage claim</option>
-          <option value="Not paying for damage to a foundation that shifted after significant water damage">Not paying for damage to a foundation that shifted after significant water damage</option>
-          <option value="Overhead and profit">Overhead and profit</option>
-          <option value="Other Job Related Overhead">Other Job Related Overhead</option>
-          <option value="Supervisory hours">Supervisory hours</option>
-          <option value="Other issue">Other issue</option>
-          <option value="Undervaluation of the claim">Undervaluation of the claim</option>
-          <option value="New construction pricing on projects that are not new construction">New construction pricing on projects that are not new construction</option>
-        </select>
-        <input id="otherTextBox" type="text" class="form-control mt-2" style="display: none;" placeholder="Specify other issue">
-      </div>
-    </div>
-
-
-  <script>
-    document.getElementById('selectIssue').addEventListener('change', function() {
-        var selectElement = document.getElementById('selectIssue');
-        var otherTextBox = document.getElementById('otherTextBox');
-  
-        if (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') {
-          otherTextBox.style.display = 'block';
-          otherTextBox.focus();
-        } else {
-          otherTextBox.style.display = 'none';
-          otherTextBox.value = ''; // Clear the text box if it was previously filled
-        }
-      });
-  </script>
-    
-<!-- Question: 17 -->
-        <div class="row pt-5">
-            <div class="col">
-                <div class="col">
-                    <label class="form-label">Amount offered by the carrier <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="amount_offered_by_the_carrier" required>
-                    
-                </div>
-            </div>
-        </div>
-<!-- Question: 18 -->
-<div class="row pt-3">
-    <div class="col">
-        <div class="col">
-            <label class="form-label">Amount bid/invoice amount <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="amount_offered_by_the_carrier" required>
-        </div>
-    </div>
+<div class="card">   
 </div>
-<!-- Question: 19 -->
-<div class="row pt-5">
-    <div class="col pt-0">
-        <label class="form-label">Name of carrier</label>
-        <label class="form-label">Select Issue</label>
-        <select class="form-select" aria-label="Select Issue" required>
-        <option selected disabled>Select an option...</option>
-        <option value="Flooring">Amica</option>
-        <option value="Flooring">Allstate</option>
-        <option value="Flooring">American Family/Homesite</option>
-        <option value="Flooring">(ASI) American Strategic Insurance</option>
-        <option value="Flooring">Chubb</option>
-        <option value="Flooring">Farmers Insurance</option>
-        <option value="Flooring">Foremost</option>
-        <option value="Flooring">Grange Insurance</option>
-        <option value="Flooring">Hartford</option>
-        <option value="Flooring">MAPFRE</option>
-        <option value="Flooring">Nationwide</option>
-        <option value="Flooring">Oregon Mutual</option>
-        <option value="Flooring">Pure Insurance</option>
-        <option value="Flooring">Safeco/Liberty Mutual</option>
-        <option value="Flooring">State Farm</option>
-        <option value="Flooring">Travelers</option>
-        <option value="Flooring">USAA</option>
-        <option value="Flooring">OTHER</option>
-        </select>
-    </div>
-</div>
-<!-- Question: 20 -->
-<div class="row pt-5">
-    <label class="form-label">Do you have an (AOR) assignment of rights signed by all property owners?<span class="text-danger">*</span> </label>
-    <div class="button-container">
-        <button class="button" onclick="selectButton('YES')">YES</button>
-        <button class="button" onclick="selectButton('NO')">NO</button>
-    </div>    
-</div>
-<!-- Question: 21 -->
-
-        <div class="row pt-5">
+        <div class="card row pt-4 mt-5 p-4">
             <form enctype="multipart/form-data" id="photoUploadForm">
                 <div class="mb-3">
                   <label for="photoUpload" class="form-label">Select Photo(s) to Upload:</label>
@@ -333,8 +221,9 @@
         </div>
 
 
+
 <!-- Question: 22 -->
-    <div class="row pt-5">
+    <div class="card row pt-4 mt-4 p-4">
         <form enctype="multipart/form-data">
             <div class="mb-3">
               <label for="fileUpload" class="form-label">Select File to Upload:</label>
@@ -349,7 +238,7 @@
   
 
 
-      <div class="row p-4">
+      <div class="row pt-2 p-0">
         <form action="/submit" method="post">
             <div class="row pt-4">
               <!-- Your form controls go here -->
