@@ -5,3 +5,60 @@ margin: 0;
 padding: 0;
 scroll-behavior: smooth;
 }
+
+.match-btn{
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+}
+.match-btn:hover{
+    background-color: #00e498;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+}
+.match-btn-no{
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+}
+.match-btn-no:hover{
+    background-color: #ff043a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+}
