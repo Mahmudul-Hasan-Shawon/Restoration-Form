@@ -40,13 +40,3 @@ function toggleSelection(selectedButton) {
 
 
 
-
-// js code ---------------------------------------------------------------------- 3 start
-document.getElementById('selectIssue').addEventListener('change', function() {
-    var selectElement = this;
-    var otherTextBox = document.getElementById('otherTextBox');
-    otherTextBox.style.display = (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') ? 'block' : 'none';
-    if (otherTextBox.style.display === 'block') otherTextBox.focus();
-    else otherTextBox.value = ''; // Clear the text box if it was previously filled
-});
-// js code - 3 end
