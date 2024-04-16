@@ -233,7 +233,7 @@
         </div> -->
 <!-- Question: 15 -->
 
-        <div class="card row pt-0 pb-4 p-4 mt-5 pt-4 ">
+        <div class="card row pt-0 pb-5 p-4 mt-5 pt-4 ">
             <div class="col pt-0 pb-2">
                 <label class="form-label">Is one of the issues applicable?</label>
                 <label class="form-label">Select Issue</label>
@@ -248,6 +248,54 @@
                 </select>
             </div>
         </div>
+
+
+
+
+
+
+<!-- Question: 16 -->
+<div class="card mt-5 pb-5 p-4 row pt-5">
+    <div class="col pt-0">
+      <label class="form-label">Carrier is not paying for the following</label>
+      <select id="selectIssue" class="form-select" aria-label="Select Issue" required>
+        <option selected disabled>Select an option...</option>
+        <option value="Denied sudden accidental damage">Denied sudden accidental damage</option>
+        <option value="PWI line items on a fire damage claim">PWI line items on a fire damage claim</option>
+        <option value="Not paying for damage to a foundation that shifted after significant water damage">Not paying for damage to a foundation that shifted after significant water damage</option>
+        <option value="Overhead and profit">Overhead and profit</option>
+        <option value="Other Job Related Overhead">Other Job Related Overhead</option>
+        <option value="Supervisory hours">Supervisory hours</option>
+        <option value="Other issue">Other issue</option>
+        <option value="Undervaluation of the claim">Undervaluation of the claim</option>
+        <option value="New construction pricing on projects that are not new construction">New construction pricing on projects that are not new construction</option>
+      </select>
+      <input id="otherTextBox" type="text" class="form-control text-black mt-2" style="display: none;" placeholder="Specify other issue">
+    </div>
+  </div>
+<script>
+  document.getElementById('selectIssue').addEventListener('change', function() {
+      var selectElement = document.getElementById('selectIssue');
+      var otherTextBox = document.getElementById('otherTextBox');
+
+      if (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') {
+        otherTextBox.style.display = 'block';
+        otherTextBox.focus();
+      } else {
+        otherTextBox.style.display = 'none';
+        otherTextBox.value = ''; // Clear the text box if it was previously filled
+      }
+    });
+</script>
+
+
+
+
+
+
+
+
+
 
 
 
