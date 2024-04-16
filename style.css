@@ -172,3 +172,10 @@ scroll-behavior: smooth;
    
     }
 
+
+    @media (min-width: 992px) {
+      .col-lg-6.custom-width {
+        width: 600px;
+      }
+    }
+
