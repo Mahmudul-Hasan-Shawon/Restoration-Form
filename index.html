@@ -11,28 +11,30 @@
      <script src="./Asset/bootstrap.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- custom JS -->
     <script src="./script.js"></script>
 </head>
 <body>
 
 
 
-
+    <!-- HEADING -->
     <div class="container">
         <h1 class="text-center pt-5" style="color: #a230ff; font-weight:700;">RESTORATION COMPANY</h1>
     </div>
 
- 
-    
-<!-- Question: 1 -->
+
 <div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
+
+    <!-- CARD : 1 START -->
     <div class="row card pt-5 pb-5 p-4">
-        <div class="">
+
+        <!-- Question: 1 -->
             <div class="col">
                 <label for="name" class="form-label">Your Name<span class="text-danger">*</span></label>
                 <input type="text" class="form-control text-black" id="name" required>
             </div>
-        </div>
+
         <!-- Question: 2 -->
         <div class="pt-3">
             <div class="col">
@@ -41,6 +43,7 @@
                 <input type="text" class="form-control text-black" id="company_name" required>
             </div>
         </div>
+
         <!-- Question: 3 -->
         <div class="pt-3">
             <div class="col">
@@ -48,6 +51,7 @@
                 <input type="text" class="form-control text-black" id="claim_number" required>
             </div>
         </div>
+
         <!-- Question: 4 -->
         <div class="pt-3">
             <div class="col">
@@ -55,6 +59,7 @@
                 <input type="text" class="form-control text-black" id="policy_number" required>
             </div>
         </div>
+
         <!-- Question: 5 -->
         <div class="pt-3">
             <div class="col">
@@ -62,10 +67,13 @@
                 <input type="date" class="form-control text-black" id="date_of_loss" required>
             </div>
         </div>
-
     </div>
+    <!-- CRAD : 1 END -->
 
+
+    <!-- CARD : 2 START  -->
     <div class="row card mt-5 pb-5 p-4">
+
     <!-- Question: 6 -->
     <div class="pt-4">
         <div class="col">
@@ -74,7 +82,8 @@
             <input type="text" class="form-control text-black" id="property_owner_first_name" required>
         </div>
     </div>
-    <!-- Question: 7 -->
+
+    <!-- Question: 7     -->
     <div class="pt-3">
         <div class="col">
             <label for="property_owner_last_name" class="form-label">Property Owner’s Last Name<span
@@ -102,144 +111,135 @@
     </div>
 
     <!-- Question: 10 -->
-<div class="container mt-3 pt-2">
-    <form>
-      <div class="row mb-2">
-        <div class="col">
-          <label class="form-label">Is there a second property owner?<span class="text-danger">*</span></label>
-            <div class="row">
-              <div class="col-12">
-                <div class="button-container">
-                    <div class="row row-cols-3 gy-2">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
-                            <button class="button" onclick="toggleSecondOwnerFields('YES')">YES</button>
-                            
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-4 col-4 gy-2">
-                            <button class="button" onclick="toggleSecondOwnerFields('NO')">NO</button>
+    <div class="container mt-3 pt-2">
+        <form>
+            <div class="row mb-2">
+                <div class="col">
+                    <label class="form-label">Is there a second property owner?<span class="text-danger">*</span></label>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="button-container">
+                                <div class="row row-cols-3 gy-2">
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
+                                        <button class="button" onclick="toggleSecondOwnerFields('YES')">YES</button>
 
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
-                            <button class="button" onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4 col-4 gy-2">
+                                        <button class="button" onclick="toggleSecondOwnerFields('NO')">NO</button>
 
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
+                                        <button class="button" onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
                     </div>
-                  
-                  
-                 
+
                 </div>
-              </div>
             </div>
-      
-          
+            <script>
+                function toggleSecondOwnerFields(selection) {
+                    var secondOwnerFields = document.getElementById('second_owner_fields');
+                    if (selection === 'YES') {
+                        secondOwnerFields.style.display = 'block';
+                    } else {
+                        secondOwnerFields.style.display = 'none';
+                    }
+                    var buttons = document.querySelectorAll('.button');
+                    buttons.forEach(function(button) {
+                        if (button.innerText === selection) {
+                            button.classList.add('selected');
+                            sendDataToBackend(selection);
+                        } else {
+                            button.classList.remove('selected');
+                        }
+                    });
+                }
+
+                function sendDataToBackend(selection) {
+                    // Replace the URL with your backend API endpoint
+                    var url = 'https://example.com/api/submitData';
+                    var data = {
+                        selection: selection
+                    };
+                    fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('Response from backend:', data);
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                        });
+                }
+            </script>
+
+            <!-- Fields for second property owner -->
+            <div class="row mb-3" id="second_owner_fields" style="display: none;">
+                <div class="col">
+                    <label for="second_owner_first_name" class="form-label">Second Property Owner’s First Name<span
+                            class="text-danger">*</span></label>
+                    <input type="text" class="form-control text-black" id="second_owner_first_name" required>
+                </div>
+                <div class="col pt-2">
+                    <label for="second_owner_last_name" class="form-label">Second Property Owner’s Last Name<span
+                            class="text-danger">*</span></label>
+                    <input type="text" class="form-control text-black" id="second_owner_last_name" required>
+                </div>
+            </div>
+            <!-- End of fields for second property owner -->
+        </form>
+    </div>
+    </div>
+    <!-- CARD : 2 -->
+        
+
+
+    <!-- CARD : 3  -->
+    <!-- Question : 11 -->
+    <div class="row card mt-5 p-4">
+        <label for="paying_to_match" class="form-label">Is the insurance company paying to match?<span
+                class="text-danger">*</span></label>
+        <div class="button-container">
+            <div class="row row-cols-2 gy-2">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <button class="custom-button" onclick="toggleSelection(1)">YES</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <button class="custom-button" onclick="toggleSelection(2)">NO</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <script>
-        function toggleSecondOwnerFields(selection) {
-            var secondOwnerFields = document.getElementById('second_owner_fields');
-            if (selection === 'YES') {
-                secondOwnerFields.style.display = 'block';
-            } else {
-                secondOwnerFields.style.display = 'none';
-            }
-    
-            var buttons = document.querySelectorAll('.button');
-            buttons.forEach(function(button) {
-                if (button.innerText === selection) {
+    </div>
+    <!-- CARD : 3  -->
+
+
+    <!-- selected button color : START -->
+    <script>
+        function toggleSelection(selectedButton) {
+            var buttons = document.querySelectorAll('.custom-button');
+            
+            buttons.forEach(function(button, index) {
+                if (index + 1 === selectedButton) {
                     button.classList.add('selected');
-                    sendDataToBackend(selection);
                 } else {
                     button.classList.remove('selected');
                 }
             });
         }
-    
-        function sendDataToBackend(selection) {
-            // Replace the URL with your backend API endpoint
-            var url = 'https://example.com/api/submitData';
-            var data = { selection: selection };
-    
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Response from backend:', data);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-        }
     </script>
-    
-      
-      
-
-      <!-- Fields for second property owner -->
-      <div class="row mb-3" id="second_owner_fields" style="display: none;">
-        <div class="col">
-          <label for="second_owner_first_name" class="form-label">Second Property Owner’s First Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control text-black" id="second_owner_first_name" required>
-        </div>
-        <div class="col pt-2">
-          <label for="second_owner_last_name" class="form-label">Second Property Owner’s Last Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control text-black" id="second_owner_last_name" required>
-        </div>
-      </div>
-      <!-- End of fields for second property owner -->
-    </form>
-  </div>
-
-
-
-</div>
-        
-
-
-
-<div class="row card mt-5 p-4">
-    <label for="paying_to_match" class="form-label">Is the insurance company paying to match?<span class="text-danger">*</span></label>
-    <div class="button-container">
-        <div class="row row-cols-2 gy-2">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <button class="custom-button" onclick="toggleSelection(1)">YES</button>
-                
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <button class="custom-button" onclick="toggleSelection(2)">NO</button>
-                
-            </div>
-
-        </div>
-        <!-- <button class="custom-button" onclick="toggleSelection(1)">YES</button>
-        <button class="custom-button" onclick="toggleSelection(2)">NO</button> -->
-    </div>
-    
-</div>
-
-<script>
-    function toggleSelection(selectedButton) {
-        var buttons = document.querySelectorAll('.custom-button');
-        
-        buttons.forEach(function(button, index) {
-            if (index + 1 === selectedButton) {
-                button.classList.add('selected');
-            } else {
-                button.classList.remove('selected');
-            }
-        });
-    }
-</script>
+    <!-- selected button color : START -->
 
 
 
@@ -249,22 +249,8 @@
 
 
 
-
-
-
-
-
-<!-- Question: 14 -->
-        <!-- <div class="row pt-5">
-            <div class="col">
-                <div class="col">
-                    <label class="form-label">Is one of the issues applicable?</label>
-                    
-                </div>
-            </div>
-        </div> -->
-<!-- Question: 15 -->
-
+        <!-- CARD : 4 START -->
+        <!-- Queston : 12 -->
         <div class="card row pt-0 pb-5 p-4 mt-5 pt-4 ">
             <div class="col pt-0 pb-2">
                 <label class="form-label">Is one of the issues applicable?</label>
@@ -280,65 +266,53 @@
                 </select>
             </div>
         </div>
+        <!-- CARD : 4 END -->
 
 
 
 
 
+    <!-- CARD : 5 START -->
+        <!-- Question: 13 -->
+        <div class="card mt-5 pb-5 p-4 row pt-5">
+            <div class="col pt-0">
+            <label class="form-label">Carrier is not paying for the following</label>
+            <select id="selectIssue" class="form-select" aria-label="Select Issue" required>
+                <option selected disabled>Select an option...</option>
+                <option value="Denied sudden accidental damage">Denied sudden accidental damage</option>
+                <option value="PWI line items on a fire damage claim">PWI line items on a fire damage claim</option>
+                <option value="Not paying for damage to a foundation that shifted after significant water damage">Not paying for damage to a foundation that shifted after significant water damage</option>
+                <option value="Overhead and profit">Overhead and profit</option>
+                <option value="Other Job Related Overhead">Other Job Related Overhead</option>
+                <option value="Supervisory hours">Supervisory hours</option>
+                <option value="Other issue">Other issue</option>
+                <option value="Undervaluation of the claim">Undervaluation of the claim</option>
+                <option value="New construction pricing on projects that are not new construction">New construction pricing on projects that are not new construction</option>
+            </select>
+            <input id="otherTextBox" type="text" class="form-control text-black mt-2" style="display: none;" placeholder="Specify other issue">
+            </div>
+        </div>
+        <script>
+        document.getElementById('selectIssue').addEventListener('change', function() {
+            var selectElement = document.getElementById('selectIssue');
+            var otherTextBox = document.getElementById('otherTextBox');
 
-<!-- Question: 16 -->
-<div class="card mt-5 pb-5 p-4 row pt-5">
-    <div class="col pt-0">
-      <label class="form-label">Carrier is not paying for the following</label>
-      <select id="selectIssue" class="form-select" aria-label="Select Issue" required>
-        <option selected disabled>Select an option...</option>
-        <option value="Denied sudden accidental damage">Denied sudden accidental damage</option>
-        <option value="PWI line items on a fire damage claim">PWI line items on a fire damage claim</option>
-        <option value="Not paying for damage to a foundation that shifted after significant water damage">Not paying for damage to a foundation that shifted after significant water damage</option>
-        <option value="Overhead and profit">Overhead and profit</option>
-        <option value="Other Job Related Overhead">Other Job Related Overhead</option>
-        <option value="Supervisory hours">Supervisory hours</option>
-        <option value="Other issue">Other issue</option>
-        <option value="Undervaluation of the claim">Undervaluation of the claim</option>
-        <option value="New construction pricing on projects that are not new construction">New construction pricing on projects that are not new construction</option>
-      </select>
-      <input id="otherTextBox" type="text" class="form-control text-black mt-2" style="display: none;" placeholder="Specify other issue">
-    </div>
-  </div>
-<script>
-  document.getElementById('selectIssue').addEventListener('change', function() {
-      var selectElement = document.getElementById('selectIssue');
-      var otherTextBox = document.getElementById('otherTextBox');
-
-      if (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') {
-        otherTextBox.style.display = 'block';
-        otherTextBox.focus();
-      } else {
-        otherTextBox.style.display = 'none';
-        otherTextBox.value = ''; // Clear the text box if it was previously filled
-      }
-    });
-</script>
-
-
-
+            if (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') {
+                otherTextBox.style.display = 'block';
+                otherTextBox.focus();
+            } else {
+                otherTextBox.style.display = 'none';
+                otherTextBox.value = ''; // Clear the text box if it was previously filled
+            }
+            });
+        </script>
+    <!-- CARD : 5 START -->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- Question: 16 -->
-<div class="card">   
-</div>
+        <!-- CARD : 6 START -->
+        <!-- Question: 14 -->
         <div class="card row pt-4 mt-5 p-4">
             <form enctype="multipart/form-data" id="photoUploadForm">
                 <div class="mb-3">
@@ -348,12 +322,13 @@
                   <div id="photoHelp" class="form-text">You can upload multiple photos at once.</div>
                 </div>
               </form>
-
         </div>
+        <!-- CARD : 6 END -->
 
 
 
-<!-- Question: 22 -->
+    <!-- CARD : 7 START -->
+    <!-- Question: 15 -->
     <div class="card row pt-4 mt-4 p-4">
         <form enctype="multipart/form-data">
             <div class="mb-3">
@@ -363,37 +338,25 @@
               <div id="fileHelp" class="form-text">Supported file formats: PDF, Word, Text</div>
             </div>
           </form>
-
     </div>
+    <!-- CARD : 7 END -->
 
     
   
 
-
-      <div class="row card p-4 mt-4 pt-2 p-0">
+    <!-- CARD : 8 START -->
+    <!-- Queston : 16 -->
+    <div class="row card p-4 mt-4 pt-2 p-0">
         <form action="/submit" method="post">
             <div class="row pt-4 p-2">
               <!-- Your form controls go here -->
               <button type="submit" class="button-submit" style="font-weight: 500;">SUBMIT</button>
             </div>
           </form>
-
     </div>
+    <!-- CARD : 8 START -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- end sontainer -->
+    <!-- end Container -->
     </div>
 
 
