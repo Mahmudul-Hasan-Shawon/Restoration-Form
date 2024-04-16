@@ -73,9 +73,9 @@ scroll-behavior: smooth;
 
 
 
-.button-container {
+/* .button-container {
   display: flex;
-}
+} */
 .button {
   background-color: black;
   color: white;
@@ -166,6 +166,21 @@ scroll-behavior: smooth;
       border-radius: 3px;
       transition: ease-in-out 0.3s;
     }
+    .custom-button:hover {
+      background-color: #00dd88;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 3px;
+      transition: ease-in-out 0.3s;
+      -webkit-transition: ease-in-out 0.3s;
+      -moz-transition: ease-in-out 0.3s;
+      -ms-transition: ease-in-out 0.3s;
+      -o-transition: ease-in-out 0.3s;
+}
     .custom-button.selected {
       background-color: #00dd88;
       color: white;
@@ -178,4 +193,6 @@ scroll-behavior: smooth;
         width: 600px;
       }
     }
+
+
 

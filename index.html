@@ -107,11 +107,32 @@
       <div class="row mb-2">
         <div class="col">
           <label class="form-label">Is there a second property owner?<span class="text-danger">*</span></label>
-          <div class="button-container">
-            <button class="button" onclick="toggleSecondOwnerFields('YES')">YES</button>
-            <button class="button" onclick="toggleSecondOwnerFields('NO')">NO</button>
-            <button class="button" onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
-        </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="button-container">
+                    <div class="row row-cols-3 gy-2">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
+                            <button class="button" onclick="toggleSecondOwnerFields('YES')">YES</button>
+                            
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-4 gy-2">
+                            <button class="button" onclick="toggleSecondOwnerFields('NO')">NO</button>
+
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
+                            <button class="button" onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
+
+                        </div>
+                        
+                    </div>
+                  
+                  
+                 
+                </div>
+              </div>
+            </div>
+      
+          
         </div>
       </div>
       <script>
@@ -189,8 +210,19 @@
 <div class="row card mt-5 p-4">
     <label for="paying_to_match" class="form-label">Is the insurance company paying to match?<span class="text-danger">*</span></label>
     <div class="button-container">
-        <button class="custom-button" onclick="toggleSelection(1)">YES</button>
-        <button class="custom-button" onclick="toggleSelection(2)">NO</button>
+        <div class="row row-cols-2 gy-2">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <button class="custom-button" onclick="toggleSelection(1)">YES</button>
+                
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <button class="custom-button" onclick="toggleSelection(2)">NO</button>
+                
+            </div>
+
+        </div>
+        <!-- <button class="custom-button" onclick="toggleSelection(1)">YES</button>
+        <button class="custom-button" onclick="toggleSelection(2)">NO</button> -->
     </div>
     
 </div>
