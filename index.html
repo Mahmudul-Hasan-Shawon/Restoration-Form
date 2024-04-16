@@ -138,52 +138,10 @@
 
                 </div>
             </div>
-            <script>
-                function toggleSecondOwnerFields(selection) {
-                    var secondOwnerFields = document.getElementById('second_owner_fields');
-                    if (selection === 'YES') {
-                        secondOwnerFields.style.display = 'block';
-                    } else {
-                        secondOwnerFields.style.display = 'none';
-                    }
-                    var buttons = document.querySelectorAll('.button');
-                    buttons.forEach(function(button) {
-                        if (button.innerText === selection) {
-                            button.classList.add('selected');
-                            sendDataToBackend(selection);
-                        } else {
-                            button.classList.remove('selected');
-                        }
-                    });
-                }
 
-                function sendDataToBackend(selection) {
-                    // Replace the URL with your backend API endpoint
-                    var url = 'https://example.com/api/submitData';
-                    var data = {
-                        selection: selection
-                    };
-                    fetch(url, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(data)
-                        })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok');
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log('Response from backend:', data);
-                        })
-                        .catch(error => {
-                            console.error('There was a problem with the fetch operation:', error);
-                        });
-                }
-            </script>
+            <!-- JS code - 1 strat -->
+            <!-- JS code - 1 end -->
+ 
 
             <!-- Fields for second property owner -->
             <div class="row mb-3" id="second_owner_fields" style="display: none;">
@@ -226,27 +184,9 @@
 
 
     <!-- selected button color : START -->
-    <script>
-        function toggleSelection(selectedButton) {
-            var buttons = document.querySelectorAll('.custom-button');
-            
-            buttons.forEach(function(button, index) {
-                if (index + 1 === selectedButton) {
-                    button.classList.add('selected');
-                } else {
-                    button.classList.remove('selected');
-                }
-            });
-        }
-    </script>
+    <!-- js code -2 start -->
+    <!-- js code -2 end -->
     <!-- selected button color : START -->
-
-
-
-
-
-
-
 
 
         <!-- CARD : 4 START -->
@@ -269,9 +209,6 @@
         <!-- CARD : 4 END -->
 
 
-
-
-
     <!-- CARD : 5 START -->
         <!-- Question: 13 -->
         <div class="card mt-5 pb-5 p-4 row pt-5">
@@ -292,19 +229,16 @@
             <input id="otherTextBox" type="text" class="form-control text-black mt-2" style="display: none;" placeholder="Specify other issue">
             </div>
         </div>
+        <!-- JS Code : 3 -->
         <script>
-        document.getElementById('selectIssue').addEventListener('change', function() {
-            var selectElement = document.getElementById('selectIssue');
-            var otherTextBox = document.getElementById('otherTextBox');
-
-            if (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') {
-                otherTextBox.style.display = 'block';
-                otherTextBox.focus();
-            } else {
-                otherTextBox.style.display = 'none';
-                otherTextBox.value = ''; // Clear the text box if it was previously filled
-            }
+            document.getElementById('selectIssue').addEventListener('change', function() {
+                var selectElement = this;
+                var otherTextBox = document.getElementById('otherTextBox');
+                otherTextBox.style.display = (selectElement.value === 'Other Job Related Overhead' || selectElement.value === 'Other issue') ? 'block' : 'none';
+                if (otherTextBox.style.display === 'block') otherTextBox.focus();
+                else otherTextBox.value = ''; // Clear the text box if it was previously filled
             });
+            
         </script>
     <!-- CARD : 5 START -->
 
