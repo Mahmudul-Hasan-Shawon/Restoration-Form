@@ -6,17 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restoration company</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- custom JS -->
     <script src="./script.js"></script>
 </head>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
@@ -93,10 +91,6 @@
         color: #ffffff;
     }
 
-
-    /* .button-container {
-  display: flex;
-} */
     .button {
         background-color: black;
         color: white;
@@ -226,10 +220,11 @@
 
 
 
-    <!-- HEADING -->
+    <!-- HEADING Start -->
     <div class="container">
         <h1 class="text-center pt-5" style="color: #a230ff; font-weight:700;">RESTORATION COMPANY</h1>
     </div>
+    <!-- HEADING END -->
 
 
     <div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
@@ -246,8 +241,7 @@
             <!-- Question: 2 -->
             <div class="pt-3">
                 <div class="col">
-                    <label for="company_name" class="form-label">Name of Your Company<span
-                            class="text-danger">*</span></label>
+                    <label for="company_name" class="form-label">Name of Your Company<span class="text-danger">*</span></label>
                     <input type="text" class="form-control text-black" id="company_name" required>
                 </div>
             </div>
@@ -263,8 +257,7 @@
             <!-- Question: 4 -->
             <div class="pt-3">
                 <div class="col">
-                    <label for="policy_number" class="form-label">Policy Number<span
-                            class="text-danger">*</span></label>
+                    <label for="policy_number" class="form-label">Policy Number<span class="text-danger">*</span></label>
                     <input type="text" class="form-control text-black" id="policy_number" required>
                 </div>
             </div>
@@ -286,8 +279,7 @@
             <!-- Question: 6 -->
             <div class="pt-4">
                 <div class="col">
-                    <label for="property_owner_first_name" class="form-label">Property Owner’s First Name<span
-                            class="text-danger">*</span></label>
+                    <label for="property_owner_first_name" class="form-label">Property Owner’s First Name<span class="text-danger">*</span></label>
                     <input type="text" class="form-control text-black" id="property_owner_first_name" required>
                 </div>
             </div>
@@ -295,8 +287,7 @@
             <!-- Question: 7     -->
             <div class="pt-3">
                 <div class="col">
-                    <label for="property_owner_last_name" class="form-label">Property Owner’s Last Name<span
-                            class="text-danger">*</span></label>
+                    <label for="property_owner_last_name" class="form-label">Property Owner’s Last Name<span class="text-danger">*</span></label>
                     <input type="text" class="form-control text-black" id="property_owner_last_name" required>
                 </div>
             </div>
@@ -304,8 +295,7 @@
             <!-- Question: 8 -->
             <div class="pt-3">
                 <div class="col">
-                    <label for="property_owner_email" class="form-label">Property Owner’s Email<span
-                            class="text-danger">*</span></label>
+                    <label for="property_owner_email" class="form-label">Property Owner’s Email<span class="text-danger">*</span></label>
                     <input type="email" class="form-control text-black" id="property_owner_email" required>
                 </div>
             </div>
@@ -313,9 +303,8 @@
             <!-- Question: 9 -->
             <div class="pt-3">
                 <div class="col">
-                    <label for="property_owner_phone_number" class="form-label">Property Owner’s Phone NUmber<span
-                            class="text-danger">*</span></label>
-                    <input type="text" class="form-control text-black" id="property_owner_phone_number" required>
+                    <label for="property_owner_phone_number" class="form-label">Property Owner’s Phone NUmber<span class="text-danger">*</span></label>
+                    <input type="number" class="form-control text-black" id="property_owner_phone_number" required>
                 </div>
             </div>
 
@@ -324,30 +313,28 @@
                 <form>
                     <div class="row mb-2">
                         <div class="col">
-                            <label class="form-label">Is there a second property owner?<span
-                                    class="text-danger">*</span></label>
+                            <label class="form-label">Is there a second property owner?<span class="text-danger">*</span></label>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="button-container">
                                         <div class="row row-cols-3 gy-2">
                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
-                                                <button class="button"
-                                                    onclick="toggleSecondOwnerFields('YES')">YES</button>
-
+                                                <!-- Add type="button" attribute to prevent form submission -->
+                                                <button type="button" class="button second_property_availability" onclick="toggleSecondOwnerFields('YES')">YES</button>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-4 col-4 gy-2">
-                                                <button class="button"
-                                                    onclick="toggleSecondOwnerFields('NO')">NO</button>
-
+                                                <!-- Add type="button" attribute to prevent form submission -->
+                                                <button type="button" class="button second_property_availability" onclick="toggleSecondOwnerFields('NO')">NO</button>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
-                                                <button class="button"
-                                                    onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
+                                                <!-- Add type="button" attribute to prevent form submission -->
+                                                <button type="button" class="button second_property_availability" onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
@@ -358,17 +345,22 @@
 
                     <!-- Fields for second property owner -->
                     <div class="row mb-3" id="second_owner_fields" style="display: none;">
-                        <div class="col">
-                            <label for="second_owner_first_name" class="form-label">Second Property Owner’s First
-                                Name<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control text-black" id="second_owner_first_name" required>
+                        <!-- Question : 11 -->
+                        <div class="col"> 
+                            <label for="second_owner_first_name" class="form-label">Second Property Owner’s First Name
+                                <span class="text-danger">*</span></label>
+                            <!-- Remove the 'required' attribute from this input field -->
+                            <input type="text" class="form-control text-black" id="second_owner_first_name">
                         </div>
+                        <!-- Question : 12 -->
                         <div class="col pt-2">
-                            <label for="second_owner_last_name" class="form-label">Second Property Owner’s Last
-                                Name<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control text-black" id="second_owner_last_name" required>
+                            <label for="second_owner_last_name" class="form-label">Second Property Owner’s Last Name
+                                <span class="text-danger">*</span></label>
+                            <!-- Remove the 'required' attribute from this input field -->
+                            <input type="text" class="form-control text-black" id="second_owner_last_name">
                         </div>
                     </div>
+
                     <!-- End of fields for second property owner -->
                 </form>
             </div>
@@ -380,15 +372,15 @@
         <!-- CARD : 3  -->
         <!-- Question : 11 -->
         <div class="row card mt-4 p-4">
-            <label for="paying_to_match" class="form-label">Is the insurance company paying to match?<span
-                    class="text-danger">*</span></label>
+            <!-- Question : 13 -->
+            <label for="paying_to_match" class="form-label">Is the insurance company paying to match?<span class="text-danger">*</span></label>
             <div class="button-container">
                 <div class="row row-cols-2 gy-2">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                        <button class="custom-button" onclick="toggleSelection(1)">YES</button>
+                        <button class="custom-button insurance_company_button" onclick="toggleSelection(1)">YES</button>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                        <button class="custom-button" onclick="toggleSelection(2)">NO</button>
+                        <button class="custom-button insurance_company_button" onclick="toggleSelection(2)">NO</button>
                     </div>
                 </div>
             </div>
@@ -402,13 +394,15 @@
         <!-- selected button color : START -->
 
 
-        <!-- CARD : 4 START -->
+        <div class="card row pt-0 pb-4 p-4 mt-4 pt-4">
+            <!-- CARD : 4 START -->
         <!-- Queston : 12 -->
-        <div class="card row pt-0 pb-5 p-4 mt-4 pt-4 ">
-            <div class="col pt-0 pb-2">
+        <div class="row pt-0 p-4 pt-4">
+            <!-- Question : 14 -->
+            <div class="col pt-0 ">
                 <label class="form-label">Is one of the issues applicable?</label>
                 <label class="form-label">Select Issue</label>
-                <select class="form-select" aria-label="Select Issue" required>
+                <select id="select_issue" class="form-select" aria-label="Select Issue" required>
                     <option selected disabled>Select an option...</option>
                     <option value="Flooring">Flooring</option>
                     <option value="Roofing">Roofing</option>
@@ -424,8 +418,9 @@
 
         <!-- CARD : 5 START -->
         <!-- Question: 13 -->
-        <div class="card mt-4 pb-5 p-4 row pt-5">
+        <div class="pb-5 p-4 row">
             <div class="col pt-0">
+                <!-- Question : 15 -->
                 <label class="form-label">Carrier is not paying for the following</label>
                 <select id="selectIssue" class="form-select" aria-label="Select Issue" required>
                     <option selected disabled>Select an option...</option>
@@ -438,13 +433,17 @@
                     <option value="Supervisory hours">Supervisory hours</option>
                     <option value="Other issue">Other issue</option>
                     <option value="Undervaluation of the claim">Undervaluation of the claim</option>
-                    <option value="New construction pricing on projects that are not new construction">New construction
-                        pricing on projects that are not new construction</option>
+                    <option value="New construction pricing on projects that are not new construction">New construction pricing on projects that are not new construction</option>
                 </select>
-                <input id="otherTextBox" type="text" class="form-control text-black mt-2" style="display: none;"
-                    placeholder="Specify other issue">
+                <input id="otherTextBox" type="text" class="form-control text-black mt-2" style="display: none;" placeholder="Specify other issue">
             </div>
         </div>
+
+        </div>
+
+        
+
+
         <!-- JS Code : 3 -->
         <script>
             document.getElementById('selectIssue').addEventListener('change', function () {
@@ -459,17 +458,42 @@
 
 
 
+        <!-- Q-17,18 Column-R Strat -->
+        <div class="row card pt-5 mt-4 pb-5 p-4">
 
-        <!-- CARD : 6 START -->
-        <!-- Question: 14 -->
+            <!-- Question: 17 -->
+            <div class="col">
+                <label for="amount_offered" class="form-label">Amount offered by the carrier ($)<span class="text-danger">*</span></label>
+                <input type="number" class="form-control text-black" id="amount_offered" required>
+            </div>
+
+            <!-- Question: 18 -->
+            <div class="pt-3">
+                <div class="col">
+                    <label for="amount_bid" class="form-label">Amount bid / Invoice amount ($)<span class="text-danger">*</span></label>
+                    <input type="number" class="form-control text-black" id="amount_bid" required>
+                </div>
+            </div>
+
+        </div>
+        <!-- Q-17 Column-R END -->
+
+
+
+
+
+
+
+
         <div class="card row pt-4 mt-4 p-4">
+            <!-- CARD : 6 START -->
+        <div class="row pt-4 mt-4 p-4">
             <form enctype="multipart/form-data" id="photoUploadForm">
                 <div class="mb-3">
                     <h6><label for="photoUpload" class="form-label">Select <span style="color: #ff00aa;">Photo(s)</span>
                             to Upload:</label></h6>
 
-                    <input type="file" class="form-control text-black" id="photoUpload" name="photos[]" multiple
-                        accept="image/*" required>
+                    <input type="file" class="form-control text-black" id="photoUpload" name="photos[]" multiple accept="image/*">
                     <div id="photoHelp" class="form-text">You can upload multiple photos at once.</div>
                 </div>
             </form>
@@ -493,18 +517,19 @@
             </form>
         </div> -->
         <!-- CARD : 7 END -->
+        
 
 
         <!-- CARD : 8 START -->
         <!-- Question: 16 - Contractor Documents -->
-        <div class="card row pt-4 mt-4 p-4">
+        <div class=" row pt-4 mt-4 p-4">
             <form enctype="multipart/form-data">
                 <div class="mb-3">
-                    <h6><label for="fileUpload" class="form-label">Select <span style="color: #ff00aa;">Contractor Documents</span> to
+                    <h6><label for="fileUpload" class="form-label">Select <span style="color: #ff00aa;">Contractor
+                                Documents</span> to
                             Upload:</label></h6>
-        
-                    <input type="file" class="form-control text-black" id="fileUpload" name="file"
-                        accept=".pdf, .doc, .docx, .txt" multiple required>
+
+                    <input type="file" class="form-control text-black" id="fileUpload" name="file" accept=".pdf, .doc, .docx, .txt">
                     <div id="fileHelp" class="form-text">Supported file formats: PDF, Word, Text</div>
                 </div>
             </form>
@@ -514,14 +539,14 @@
 
         <!-- CARD : 9 START -->
         <!-- Question: 17 - Collaboration Documents -->
-        <div class="card row pt-4 mt-4 p-4">
+        <div class=" row pt-4 mt-4 p-4">
             <form enctype="multipart/form-data">
                 <div class="mb-3">
-                    <h6><label for="fileUpload" class="form-label">Select <span style="color: #ff00aa;">Collaboration Documents</span> to
+                    <h6><label for="fileUpload" class="form-label">Select <span style="color: #ff00aa;">Collaboration
+                                Documents</span> to
                             Upload:</label></h6>
-        
-                    <input type="file" class="form-control text-black" id="fileUpload" name="file"
-                        accept=".pdf, .doc, .docx, .txt" multiple required>
+
+                    <input type="file" class="form-control text-black" id="fileUpload" name="file" accept=".pdf, .doc, .docx, .txt">
                     <div id="fileHelp" class="form-text">Supported file formats: PDF, Word, Text</div>
                 </div>
             </form>
@@ -531,19 +556,30 @@
 
         <!-- CARD : 10 START -->
         <!-- Question: 17 - PPA Documents -->
-        <div class="card row pt-4 mt-4 p-4">
+        <div class=" row pt-4 mt-4 p-4">
             <form enctype="multipart/form-data">
                 <div class="mb-3">
-                    <h6><label for="fileUpload" class="form-label">Select <span style="color: #ff00aa;">PPA Documents</span> to
+                    <h6><label for="fileUpload" class="form-label">Select <span style="color: #ff00aa;">PPA
+                                Documents</span> to
                             Upload:</label></h6>
-        
-                    <input type="file" class="form-control text-black" id="fileUpload" name="file"
-                        accept=".pdf, .doc, .docx, .txt" multiple required>
+
+                    <input type="file" class="form-control text-black" id="fileUpload" name="file" accept=".pdf, .doc, .docx, .txt">
                     <div id="fileHelp" class="form-text">Supported file formats: PDF, Word, Text</div>
                 </div>
             </form>
         </div>
         <!-- CARD : 10 END -->
+        </div>
+
+
+
+
+
+
+
+        
+
+        
 
 
 
@@ -553,14 +589,104 @@
 
         <!-- CARD :  START -->
         <!-- Queston : 16 -->
-        <div class="row card p-4 mt-4 pt-2 p-0">
-            <form action="/submit" method="post">
-                <div class="row pt-4 p-2">
-                    <!-- Your form controls go here -->
-                    <button type="submit" class="button-submit" style="font-weight: 500;">SUBMIT</button>
-                </div>
-            </form>
-        </div>
+     
+            <div class="row pt-5 p-2">
+                <!-- Your form controls go here -->
+                <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">SUBMIT</button>
+            </div>
+
+
+        <script>
+            document.getElementById("submit_button").addEventListener("click", function (event) {
+                // Prevent default form submission
+                event.preventDefault();
+
+                // Check if all required fields are filled
+                var allFieldsFilled = validateForm();
+
+                // If all required fields are filled, proceed with form submission
+                if (allFieldsFilled) {
+                    doStuff(); // Call your submission function here
+                } else {
+                    // If any required field is empty, display a message to the user
+                    alert("Please fill all the required fields.");
+                }
+            });
+
+            function validateForm() {
+    var allFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+    var allFieldsFilled = true;
+
+    allFields.forEach(function(field) {
+        if (!field.value.trim()) {
+            // Exclude second owner fields if they are not displayed
+            if (
+                field.id !== "second_owner_first_name" &&
+                field.id !== "second_owner_last_name"
+            ) {
+                allFieldsFilled = false;
+                field.classList.add('is-invalid'); // Add a visual indication for missing fields
+            }
+        } else {
+            field.classList.remove('is-invalid'); // Remove the visual indication for filled fields
+        }
+    });
+
+    return allFieldsFilled;
+}
+
+
+            function doStuff() {
+                var q1 = document.getElementById("name").value;
+                var q2 = document.getElementById("company_name").value;
+                var q3 = document.getElementById("claim_number").value;
+                var q4 = document.getElementById("policy_number").value;
+                var q5 = document.getElementById("date_of_loss").value;
+                var q6 = document.getElementById("property_owner_first_name").value;
+                var q7 = document.getElementById("property_owner_last_name").value;
+                var q8 = document.getElementById("property_owner_email").value;
+                var q9 = document.getElementById("property_owner_phone_number").value;
+                var q10 = document.querySelector(".second_property_availability.selected").innerText || "";
+                var q11 = document.getElementById("second_owner_first_name").value;
+                var q12 = document.getElementById("second_owner_last_name").value;
+                var q13 = document.querySelector(".insurance_company_button.selected").innerText || "";
+                var q14 = document.getElementById("select_issue").value; // Retrieve selected issue from dropdown
+                var q15 = document.getElementById("selectIssue").value; // Retrieve selected issue from dropdown
+                var q16 = document.getElementById("otherTextBox").value; // Retrieve selected issue from dropdown
+                var q17 = document.getElementById("amount_offered").value; // amount_offered
+                var q18 = document.getElementById("amount_bid").value; // amount_offered
+
+                // Pass all form data including the selected issue to the server-side function
+                google.script.run.userClicked(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16,q17,q18);
+
+                // Clear the input fields after submission
+                document.getElementById("name").value = "";
+                document.getElementById("company_name").value = "";
+                document.getElementById("claim_number").value = "";
+                document.getElementById("policy_number").value = "";
+                document.getElementById("date_of_loss").value = "";
+                document.getElementById("property_owner_first_name").value = "";
+                document.getElementById("property_owner_last_name").value = "";
+                document.getElementById("property_owner_email").value = "";
+                document.getElementById("property_owner_phone_number").value = "";
+                document.querySelector(".second_property_availability.selected").innerText.value = "";
+                document.querySelector(".second_property_availability.selected").classList.remove("selected")
+                document.getElementById("second_owner_first_name").value = "";
+                document.getElementById("second_owner_last_name").value = "";
+                document.querySelector(".insurance_company_button.selected").innerText.value = "";
+                document.querySelector(".insurance_company_button.selected").classList.remove("selected")
+                document.getElementById("select_issue").value = ""; // Clear the selected issue dropdown
+                document.getElementById("selectIssue").value = ""; // Clear the selected issue dropdown
+                document.getElementById("otherTextBox").value = ""; // Clear the selected issue dropdown
+                document.getElementById("amount_offered").value = ""; // 
+                document.getElementById("amount_bid").value = ""; // 
+            }
+        </script>
+
+
+
+
+
         <!-- CARD : 8 START -->
 
         <!-- end Container -->
@@ -573,7 +699,6 @@
 </body>
 
 <script>
-
     // JS code --------------------------------------------------------------------- 1 start
     function toggleSecondOwnerFields(selection) {
         var secondOwnerFields = document.getElementById('second_owner_fields');
@@ -586,17 +711,6 @@
         });
     }
 
-    function sendDataToBackend(selection) {
-        var url = 'https://example.com/api/submitData';
-        fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ selection })
-        })
-            .then(response => response.ok ? response.json() : Promise.reject('Network response was not ok'))
-            .then(data => console.log('Response from backend:', data))
-            .catch(error => console.error('Problem with fetch operation:', error));
-    }
 
     // JS code - 1 end 
 
@@ -606,7 +720,6 @@
         buttons.forEach((button, index) => button.classList.toggle('selected', index + 1 === selectedButton));
     }
     // Js code - 2 end
-
 </script>
 
 </html>
