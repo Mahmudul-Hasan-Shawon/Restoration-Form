@@ -317,6 +317,9 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="button-container">
+
+
+                                        <!-- condition work properly -->
                                         <div class="row row-cols-3 gy-2">
                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 gy-2">
                                                 <!-- Add type="button" attribute to prevent form submission -->
@@ -331,6 +334,9 @@
                                                 <button type="button" class="button second_property_availability" onclick="toggleSecondOwnerFields('UNKNOWN')">UNKNOWN</button>
                                             </div>
                                         </div>
+                                        <!-- condition work end -->
+
+
                                     </div>
                                 </div>
                             </div>
@@ -340,6 +346,8 @@
                     </div>
 
                     <!-- JS code - 1 strat -->
+                    
+
                     <!-- JS code - 1 end -->
 
 
@@ -700,16 +708,21 @@
 
 <script>
     // JS code --------------------------------------------------------------------- 1 start
-    function toggleSecondOwnerFields(selection) {
+    function toggleSecondOwnerFields(selectedOption) {
+        var buttons = document.querySelectorAll('.second_property_availability');
         var secondOwnerFields = document.getElementById('second_owner_fields');
-        secondOwnerFields.style.display = selection === 'YES' ? 'block' : 'none';
-
-        var buttons = document.querySelectorAll('.button');
-        buttons.forEach(button => {
-            button.classList.toggle('selected', button.innerText === selection);
-            if (button.innerText === selection) sendDataToBackend(selection);
+        
+        buttons.forEach(function(button) {
+            if (button.textContent.trim() === selectedOption) {
+                button.classList.add('selected');
+            } else {
+                button.classList.remove('selected');
+            }
         });
+        
+        secondOwnerFields.style.display = selectedOption === 'YES' ? 'block' : 'none';
     }
+    
 
 
     // JS code - 1 end 
