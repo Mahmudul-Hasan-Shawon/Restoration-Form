@@ -242,6 +242,28 @@
                     <br>
                     <!-- Year -->
 
+                    <!-- MONTH -->
+                    <label for="selectMonth">Month:</label>
+                    <br>
+                    <select id="selectMonth" class="form-select" aria-label="Select Month" required>
+                        <option selected disabled>Select Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="2022">March</option>
+                        <option value="2023">April</option>
+                        <option value="2024">May</option>
+                        <option value="2025">June</option>
+                        <option value="2026">July</option>
+                        <option value="2026">August</option>
+                        <option value="2026">September</option>
+                        <option value="2026">October</option>
+                        <option value="2026">November</option>
+                        <option value="2026">December</option>
+                    </select>
+                    <br>
+
+                    <!-- MONTH -->
+
                     <label for="month">Month:</label><br>
                     <input class="form-control text-black" type="text" id="month" name="month"><br>
                     <label for="image">Upload Image:</label><br>
@@ -257,7 +279,7 @@
     <script>
         function submitForm() {
             var year = document.getElementById("selectYear").value; // Get the selected year from the dropdown menu
-            var month = document.getElementById("month").value;
+            var month = document.getElementById("selectMonth").value;
             var image = document.getElementById("image").files[0];
             google.script.run.withSuccessHandler(showSuccessMessage).submitForm(year, month, image);
         }
